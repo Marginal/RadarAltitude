@@ -13,8 +13,8 @@ namespace RadarAltitude
     [KSPAddon(KSPAddon.Startup.Flight, false)]
     public class RadarAltitude : MonoBehaviour
     {
-        public AltitudeTumbler altTumbler;
-        public Color32 radarColour = new Color32(165, 87, 12, 255);	// NavBall ground colour
+        private AltitudeTumbler altTumbler;
+        private Color32 radarColour = new Color32(165, 87, 12, 255);	// NavBall ground colour
 
         public void Start()
         {
@@ -23,13 +23,13 @@ namespace RadarAltitude
 
         public void Update()
         {
-            double radarAlt = FlightGlobals.ActiveVessel.radarAltitude;
+            Vessel vessel = FlightGlobals.ActiveVessel;
+            double radarAlt = vessel.radarAltitude;
 
-            if (radarAlt <= 0)			// Splashed or crashed
-            {
-                altTumbler.tumbler.SetColor(Color.black);
-            }
-            else if (radarAlt < RDA1.maxRange)		// Maximum range of RDA-1 in-cockpit instrument
+            if (vessel.situation != Vessel.Situations.LANDED &&
+                radarAlt > 0 &&
+                radarAlt < RDA1.maxRange)
+
             {
                 if (radarAlt > RDA1.mediumRez)		// Low resolution between 1000-3000m
                     radarAlt = ((int) radarAlt / 10) * 10;
