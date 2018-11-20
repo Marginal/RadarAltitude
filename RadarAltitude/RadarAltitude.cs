@@ -23,13 +23,15 @@ namespace RadarAltitude
 
         public void Update()
         {
-            double radarAlt = FlightGlobals.ActiveVessel.radarAltitude;
+            Vessel vessel = FlightGlobals.ActiveVessel;
+            double radarAlt = vessel.radarAltitude;
 
             if (radarAlt <= 0)			// Splashed or crashed
             {
                 altTumbler.tumbler.SetColor(Color.black);
             }
-            else if (radarAlt < RDA1.maxRange)		// Maximum range of RDA-1 in-cockpit instrument
+            else if (vessel.situation != Vessel.Situations.LANDED &&
+                     vessel.altitude < RDA1.maxRange)
             {
                 if (radarAlt > RDA1.mediumRez)		// Low resolution between 1000-3000m
                     radarAlt = ((int) radarAlt / 10) * 10;
