@@ -1,7 +1,7 @@
 Radar Altitude for KSP
 ========
 
-KSP's exterior view shows altitude above sea level ("ASL") at the top of the screen (actually altitude above the average planet radius for planets without seas). That's not very useful when you're attempting to land in the dark or trying to conserve fuel by starting your landing burn as late as possible. What you want to see instead is altitude above ground level ("AGL").
+KSP's exterior view shows altitude above sea level ("ASL") at the top of the screen (actually altitude above the deepest point for planets without seas). That's not very useful when you're attempting to land in the dark or trying to conserve fuel by starting your landing burn as late as possible. What you want to see instead is altitude above ground level ("AGL").
 
 Manned command modules are equipped with an RDA-1 radar altimeter which displays AGL for altitudes < 3000m, with more precision for altitudes < 500m. But you have to switch to internal view to see it which is a pain for manned modules and isn't possible at all for unmanned probes:
 
