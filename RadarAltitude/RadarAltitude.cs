@@ -27,6 +27,7 @@ namespace RadarAltitude
             double radarAlt = vessel.radarAltitude;
 
             if (vessel.situation != Vessel.Situations.LANDED &&
+                vessel.vesselType != VesselType.EVA &&
                 radarAlt > 0 &&
                 radarAlt < RDA1.maxRange)
 
