@@ -7,7 +7,7 @@ Manned command modules are equipped with an RDA-1 radar altimeter which displays
 
 ![RDA-1 radar altimeter](img/RDA-1.png)
 
-This mod automatically switches the  exterior view's altitude readout from ASL to AGL and the digits' colour from black to "navball brown" when your altitude is below 3000m AGL:
+This mod automatically switches the  exterior view's altitude readout from ASL to AGL and the digits' colour from black to "navball brown" when your gear is down and your altitude is below 3000m AGL:
 
 ![Altitude readout in radar mode](img/radar-mode.png)
 

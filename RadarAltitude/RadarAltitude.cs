@@ -28,9 +28,9 @@ namespace RadarAltitude
 
             if (vessel.situation != Vessel.Situations.LANDED &&
                 vessel.vesselType != VesselType.EVA &&
+                vessel.ActionGroups[KSPActionGroup.Gear] &&
                 radarAlt > 0 &&
                 radarAlt < RDA1.maxRange)
-
             {
                 if (radarAlt > RDA1.mediumRez)		// Low resolution between 1000-3000m
                     radarAlt = ((int) radarAlt / 10) * 10;
